@@ -1,0 +1,18 @@
+{
+  "source": {
+      "include": [ "endpoint-functions/functions.js" ],
+      "includePattern": ".+\\.js(doc)?$"
+  },
+  "opts": {
+    "encoding"    : "utf8",
+    "destination" : "public/apidocs",
+    "recurse"     : false,
+    "package"     : "./package.json",
+    "readme"      : "./README.md"
+  },
+  "templates": {
+    "default": {
+        "outputSourceFiles": false
+    }
+  }
+}
