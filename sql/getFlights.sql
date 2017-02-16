@@ -7,10 +7,15 @@ SELECT
 		(select lookup_cd from helios.lookup l where l.lookup_id = flt.takeoff_icao_code_id) to_loc_sked,
 		(select lookup_cd from helios.lookup l where l.lookup_id = flt.land_icao_code_id) land_loc_sked,
 		
-		to_char(flt.takeoff_date_time, 'dd-Mon-yyyy hh24mi') to_dtg_sked,
-		to_char(flt.actual_takeoff_date_time, 'dd-Mon-yyyy hh24mi') to_dtg_act,
-		to_char(flt.land_date_time, 'dd-Mon-yyyy hh24mi') land_dtg_sked,
-		to_char(flt.actual_land_date_time, 'dd-Mon-yyyy hh24mi') land_dtg_act,
+		-- to_char(flt.takeoff_date_time, 'dd-Mon-yyyy hh24mi') to_dtg_sked,
+		-- to_char(flt.actual_takeoff_date_time, 'dd-Mon-yyyy hh24mi') to_dtg_act,
+		-- to_char(flt.land_date_time, 'dd-Mon-yyyy hh24mi') land_dtg_sked,
+		-- to_char(flt.actual_land_date_time, 'dd-Mon-yyyy hh24mi') land_dtg_act,
+
+		to_char(flt.takeoff_date_time, 'dd-Mon-yyyy hh24mi') takeoff_date_time,
+		to_char(flt.actual_takeoff_date_time, 'dd-Mon-yyyy hh24mi') actual_takeoff_date_time,
+		to_char(flt.land_date_time, 'dd-Mon-yyyy hh24mi') land_date_time,
+		to_char(flt.actual_land_date_time, 'dd-Mon-yyyy hh24mi') actual_land_date_time,
 
 		(select lookup_short_desc from helios.lookup l where l.lookup_id = flt.current_status_id) flt_stat,
 		(select lookup_short_desc from helios.lookup l where l.lookup_id = flt.reason_id) flt_stat_rsn,
@@ -21,8 +26,11 @@ SELECT
 		(select lookup_short_desc from helios.lookup l where l.lookup_id = msn.mission_type_id) msn_type,
 		(select lookup_short_desc from helios.lookup l where l.lookup_id = msn.area_id) msn_area,
 		
-		to_char(msn.onstn_actual_dtg, 'dd-Mon-yyyy hh24mi') on_sta_dtg_act,
-		to_char(msn.offstn_actual_dtg, 'dd-Mon-yyyy hh24mi') off_sta_dtg_act,
+		-- to_char(msn.onstn_actual_dtg, 'dd-Mon-yyyy hh24mi') on_sta_dtg_act,
+		-- to_char(msn.offstn_actual_dtg, 'dd-Mon-yyyy hh24mi') off_sta_dtg_act,
+
+		to_char(msn.onstn_actual_dtg, 'dd-Mon-yyyy hh24mi') onstn_actual_dtg,
+		to_char(msn.offstn_actual_dtg, 'dd-Mon-yyyy hh24mi') offstn_actual_dtg,
 
 		(select lookup_short_desc from helios.lookup l where l.lookup_id = msn.current_status_id) msn_stat,
 		(select lookup_short_desc from helios.lookup l where l.lookup_id = msn.reason_id) msn_stat_rsn,
