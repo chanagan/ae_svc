@@ -51,6 +51,7 @@ SELECT
 		flt.reason_id flt_stat_rsn_id, 
 		flt.tacon_id flt_tacon_id,
 
+		msn.mission_id msn_id,
 		msn.mission_type_id msn_type_id,  
 		msn.area_id msn_area_id,
 		msn.current_status_id msn_stat_id, 
